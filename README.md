@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Burgerito Admin
 
-## Getting Started
+**Burgerito Admin** est le panneau d’administration de l’application e-commerce **Burgerito**.  
+Il permet aux administrateurs de gérer les commandes, suivre leur statut, et échanger en temps réel avec les clients via un système de **chat WebSocket** intégré.
 
-First, run the development server:
+Ce back-office est développé avec **Next.js**, **React**, et **Tailwind CSS**, en utilisant l’**Edge Runtime** pour la gestion des WebSockets.
 
+---
+
+## 🚀 Fonctionnalités principales
+
+- 🔐 **Authentification administrateur** (accès sécurisé)
+- ![22](https://github.com/user-attachments/assets/5a74e733-c813-45dc-b925-64831dd3ea82)
+
+- 📦 **Gestion des commandes** : visualisation, mise à jour du statut (en cours, livré, annulé)
+- 💬 **Support client en temps réel** (chat WebSocket)
+- 📡 **Communication ** admin ↔ client
+![11](https://github.com/user-attachments/assets/b6b06632-a575-4ae2-a0fb-9059a682caac)
+
+- 🧭 **Navigation claire** (Dashboard, Orders, Support)
+- <img width="1573" height="81" alt="image" src="https://github.com/user-attachments/assets/8b94eb4b-6200-41d3-9fba-6b16fe655756" />
+
+- 🎨 **Interface moderne et responsive**
+
+---
+
+## 🧠 Stack technique
+
+| Technologie | Usage |
+|--------------|--------|
+| **Next.js 15** | Framework principal |
+| **React 19** | Interface utilisateur |
+| **TypeScript** | Sécurité et typage fort |
+| **Tailwind CSS 4** | Stylisation moderne |
+| **WebSocket (Edge Runtime)** | Communication temps réel |
+| **LocalStorage / API interne** | Stockage temporaire |
+
+---
+
+## 🧩 Installation & Lancement
+
+### 1️⃣ Cloner le projet
 ```bash
+git clone https://github.com/mohamedbatri-6/Burgerito-Admin.git
+cd Burgerito-Admin
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+burgerito-admin/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+├── src/
+│   ├── app/
+│   │   ├── (admin)/
+│   │   │   ├── login/
+│   │   │   ├── support/
+│   │   │   └── orders/
+│   │   └── api/
+│   │       └── ws/
+│   │           └── route.ts   # Serveur WebSocket (Edge Runtime)
+│   ├── components/
+│   │   ├── AdminHeader.tsx
+│   │   ├── Protected.tsx
+│   │   ├── SupportChat.tsx
+│   │   └── SupportConv.tsx
+│   ├── lib/
+│   │   ├── useSupportChat.ts   # Hook WebSocket (client)
+│   │   └── ...
+│   └── styles/
+│       └── globals.css
+├── public/
+├── package.json
+└── server.ts
+└── tsconfig.json
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
